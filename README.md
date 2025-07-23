@@ -1,4 +1,4 @@
-# CI-CD_Automation_for_Azure_Data_Factory
+# CICD_Automation_for_Azure_Data_Factory
 
 This project implements **CI/CD automation** for Azure Data Factory using  **Azure DevOps**, enabling consistent, reliable, and fully automated deployment of ADF pipelines — including components such as Linked Services, Datasets, and Triggers — across **Development**, **UAT**, and **Production** environments. 
 
@@ -58,7 +58,7 @@ In this method, the **manual publish step is eliminated**. Instead, **automatic 
 
 Below is the architecture of the ADF CI/CD implementation:
 
-*(Insert your architecture diagram here)*
+![ADF_CICD_Architecture](/ADF_CICD_Architecture.jpg)
 
 In the diagram above, there is an **ADF instance in the Dev environment** linked to **GitHub**. Development activities are carried out on the Dev ADF using **feature branches**, and changes are merged into the **`develop` branch** via **pull requests**. Once merged, the updates are deployed to the Dev ADF.
 
