@@ -66,6 +66,48 @@ After the merge, the **ADF CI/CD pipeline** is triggered, which automatically de
 
 ---
 
+## 📁 Project Structure
+
+
+📁 build/                            # 🔧 Build folder
+
+    ├── adf-pipeline.yml                 # Main Azure DevOps YAML pipeline (Build + Deploy)
+
+    └── package.json                     # Defines npm build/export/validate scripts
+
+📁 data_ops/adf/                          # Core ADF source code folder
+
+    ├── 📁 dataset/
+
+        ├── source.json              # Dataset definition for source
+
+        └── destination.json         # Dataset definition for destination
+
+    ├── 📁 linkedService/
+
+        ├── adls_connection.json     # Linked Service: Azure Data Lake
+            
+        ├── databricks_connection.json # Linked Service: Azure Databricks
+            
+        └── keyvault_connection.json # Linked Service: Azure Key Vault
+
+    ├── 📁 pipeline/
+     
+        ├── copy_data.json           # Pipeline definition 1
+            
+        └── pipeline1.json           # Pipeline definition 2
+
+    └── 📁 trigger/
+    
+        └── trigger1.json            # Trigger for pipeline scheduling
+
+├── ADF_CICD_Architecture.jpg            # Architecture diagram for documentation/reference
+
+├── README.md                            # 📘 Project document
+
+
+---
+
 # Getting start
 
 ## ✅ Prerequisites
