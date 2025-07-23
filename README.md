@@ -569,7 +569,7 @@ This is the step where the **actual deployment** of ADF resources takes place.
 
 ```yaml
 - task: AzureResourceManagerTemplateDeployment@3
-  displayName: 'Deploying to Production'
+  displayName: 'Deploying to Development'
   inputs:
     deploymentScope: 'Resource Group'
     azureResourceManagerConnection: '$(azure_service_connection_name)'
@@ -654,7 +654,7 @@ In this section, we’ll look at how to **deploy ADF resources to a completely n
 ```yaml
 - stage: Deploy_to_Prod
     condition: and(succeeded(), eq(variables['build.SourceBranchName'], 'main'))
-    displayName: Deploy Prod Stage
+    displayName: Deploy To Production Environment
     dependsOn: Build_And_Publish_ADF_Artifacts
     jobs: 
       - job: Deploy_Prod
@@ -675,6 +675,7 @@ In this section, we’ll look at how to **deploy ADF resources to a completely n
             TriggerStatus: 'stop'
 
         - task: AzureResourceManagerTemplateDeployment@3
+          displayName: 'Deploying to Production'
           inputs:
             deploymentScope: 'Resource Group'
             azureResourceManagerConnection: '$(azure_service_connection_name)'
